@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça nossos bolos e participe do nosso festival de bolos!">
+    <title>Festival de Bolos | Marília Bolos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagens/bolo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+       <header class="header">
+        <a href="#" class="logo" aria-label="Marília Bolos home">
+        <img src="imagens/bolo.png" alt="Logo" class="logo-imagem">
+        <span class="logo-text">Marília&nbsp;<span>Bolos</span></span>
+        </a>
+
+        <nav class="nav">
+            <a href="#inicio">Início</a>
+            <a href="#bolos">Nossos bolos</a>
+            <a href="#festival">O festival</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <a href="#festival" class="btn btn-small">Conheça o festival</a>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow">FEITO COM AMOR, SERVIDO COM CARINHO</span>
+
+                <h1>Momentos doces<br>merecem <span>bolos especiais.</span></h1>
+
+                <p>
+                    Sabores que encantam, receitas feitas com carinho
+                    e momentos que ficam na memória.
+                    Venha conhecer nosso mundo de delícias!
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#festival" class="btn">Quero conhecer o festival ↗</a>
+                    <a href="#bolos" class="text-link">Conhecer os bolos ↓</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="imagens/marilia.png"
+                    alt="Marília, a doceira por trás dos bolos"
+                >
+                <div class="image-note">
+                    <span>♡</span>
+                    <div>
+                        <strong>Feito com carinho</strong>
+                        <small>Um pedacinho de felicidade</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cakes section" id="bolos">
+            <div class="section-heading">
+                <span class="eyebrow">NOSSAS DELÍCIAS</span>
+                <h2>Qual vai ser o seu <span>favorito?</span></h2>
+                <p>Descubra sabores preparados para adoçar o seu dia.</p>
+            </div>
+
+            <div class="cake-grid">
+                <article class="cake-card">
+                    <img src="imagens/Bolo_matilda.png" alt="Bolo Matilda" loading="lazy">
+                    <div class="cake-info">
+                        <h3>Bolo Matilda</h3>
+                        <p>Massa fofinha de chocolate intenso com recheio e cobertura ultra cremosos. O verdadeiro sonho de qualquer amante de chocolate!</p>
+                    </div>
+                </article>
+
+                <article class="cake-card">
+                    <img src="imagens/ninho_morango.png" alt="Bolo Ninho com Morango" loading="lazy">
+                    <div class="cake-info">
+                        <h3>Bolo Ninho c/ morango</h3>
+                        <p>Creme aveludado de Leite Ninho combinado com morangos frescos e selecionados. Uma opção leve, equilibrada e irresistível.</p>
+                    </div>
+                </article>
+
+                <article class="cake-card">
+                   <img src="imagens/bolo_pudim.png" alt="Bolo Pudim" loading="lazy">
+                    <div class="cake-info">
+                        <h3>Bolo Pudim</h3>
+                        <p>A união perfeita entre a massa molhadinha de bolo e a doçura cremosa do pudim artesanal. O melhor de dois mundos numa só fatia!</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="cakes-action">
+                <a 
+                    href="https://wa.me/5516993641352?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20conhecer%20outros%20sabores%20de%20bolos." 
+                    class="btn" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                >
+                    Conhecer outros sabores no WhatsApp ↗
+                </a>
+            </div>
+        </section>
+
+        <section class="festival section" id="festival">
+            <div class="festival-content">
+                <span class="eyebrow">UM CONVITE ESPECIAL</span>
+                <h2>Vem aí o nosso<br><span>Festival de Bolos!</span></h2>
+                <p>
+                    Um encontro cheio de sabor, carinho e muitas delícias.
+                    Venha participar desse momento especial com a gente!
+                </p>
+
+                <div class="event-details">
+                    <div>
+                        <span>📅</span>
+                        <div>
+                            <strong>Data</strong>
+                            <p>10 de outubro de 2026</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>🕒</span>
+                        <div>
+                            <strong>Horário</strong>
+                            <p>A partir das 15h</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>📍</span>
+                        <div>
+                            <strong>Local</strong>
+                            <p>Avenida São Vicente, 3028</p>
+                            <p>Bairro Santa Rita — Franca/SP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        title="Localização do Festival de Bolos da Marília"
+                        src="https://maps.google.com/maps?q=-20.5487703,-47.3906858&t=k&z=18&output=embed"
+                        width="100%"
+                        height="400"
+                        style="border: 0;"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <a
+                    class="btn"
+                    href="https://www.google.com/maps/dir/?api=1&destination=-20.5487703,-47.3906858"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Como chegar ao festival ↗
+                </a>
+            </div>
+        </section>
+
+        <section class="contact section" id="contato">
+            <span class="eyebrow">VAMOS CONVERSAR?</span>
+
+            <h2>Um festival cheio de sabor!</h2>
+
+            <p>
+                Venha conhecer os bolos da Marília e compartilhar
+                esse momento especial com a gente.
+            </p>
+
+            <div class="contact-actions">
+                <a
+                    href="https://wa.me/5516993641352?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Vi%20o%20site%20do%20Festival%20de%20Bolos%20e%20gostaria%20de%20saber%20mais."
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Falar pelo WhatsApp ↗
+                </a>
+
+                <a
+                    href="https://www.instagram.com/mariliamartins7884/"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Conhecer o Instagram ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#inicio" class="logo">
+            Marília <span>Bolos.</span>
+        </a>
+
+        <p>Feito com carinho para adoçar momentos especiais.</p>
+
+        <a
+            href="https://www.instagram.com/mariliamartins7884/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram da Marília Bolos ↗
+        </a>
+
+        <small>© 2026 Marília Bolos. Todos os direitos reservados.</small>
+    </footer>
+
+</body>
+</html>
