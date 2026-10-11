@@ -87,7 +87,7 @@ a {
 .logo-text {
     display: inline-flex;
     align-items: center;
-    gap: 0;
+    gap: 0.12em;
     letter-spacing: 0.3px;
     color: var(--brown);
     text-shadow: 0 2px 10px rgba(67, 41, 31, 0.08);
@@ -405,6 +405,282 @@ a {
     font-size: 11px;
 }
 
+/* ===== HISTÓRICO DOS FESTIVAIS ===== */
+.history {
+    background: var(--white);
+}
+
+.festival-tabs {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.festival-tabs-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.tab-button {
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--brown);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab-button:hover,
+.tab-button.is-active {
+    background: var(--brown);
+    border-color: var(--brown);
+    color: white;
+    box-shadow: 0 10px 20px rgba(67, 41, 31, 0.12);
+}
+
+.tab-panel {
+    display: none;
+    animation: fade-up 0.45s ease both;
+}
+
+.tab-panel.is-active {
+    display: block;
+}
+
+.history-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.history-summary,
+.feedback-item,
+.future-festival {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.history-summary {
+    padding: 28px;
+}
+
+.summary-badge {
+    display: inline-flex;
+    padding: 8px 12px;
+    background: #f8dfe3;
+    color: #7d4854;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.history-summary h3 {
+    margin-top: 18px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 2.2vw, 38px);
+    line-height: 1.2;
+}
+
+.history-summary > p {
+    margin-top: 16px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.history-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.history-stats div {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+}
+
+.history-stats strong {
+    display: block;
+    font-size: clamp(20px, 2vw, 28px);
+    color: var(--brown);
+}
+
+.history-stats span {
+    display: block;
+    margin-top: 5px;
+    color: var(--text);
+    font-size: 11px;
+}
+
+.history-carousel,
+.media-carousel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(180deg, #fffdf9 0%, #f9efe9 100%);
+    padding: 18px;
+    box-shadow: 0 18px 32px rgba(67, 41, 31, 0.08);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.history-carousel-title {
+    margin: 0 0 12px;
+    color: #7d4c4b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(125, 76, 75, 0.08);
+}
+
+.history-carousel-track,
+.media-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 14px;
+}
+
+.history-carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    border: 1px solid var(--border);
+    background: #f2e6df;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.history-carousel-track img:hover {
+    transform: scale(1.02);
+    filter: saturate(1.08);
+}
+
+.media-card {
+    flex: 0 0 100%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(67, 41, 31, 0.04);
+}
+
+.media-card video {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    background: #f3e7db;
+    border-radius: 18px;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.carousel-btn,
+.media-carousel-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff 0%, #f7e4e8 100%);
+    color: var(--brown);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 18px rgba(67, 41, 31, 0.08);
+}
+
+.carousel-btn:hover,
+.media-carousel-btn:hover {
+    background: linear-gradient(135deg, #4a2f28 0%, #7a4b4b 100%);
+    border-color: var(--brown);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e7d6d1;
+    display: block;
+    transition: all 0.25s ease;
+}
+
+.dot.active {
+    width: 26px;
+    border-radius: 999px;
+    background: var(--brown);
+}
+
+.feedback-grid {
+    display: none;
+}
+
+.future-festival {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 320px;
+    padding: 30px 24px;
+    text-align: center;
+}
+
+.future-festival-icon {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #f8e6ea;
+    font-size: 30px;
+}
+
+.future-festival h3 {
+    margin-top: 18px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(26px, 2vw, 32px);
+}
+
+.future-festival p {
+    margin-top: 14px;
+    max-width: 480px;
+    color: var(--text);
+    line-height: 1.8;
+}
+
 /* ===== CONTATO ===== */
 .contact {
     text-align: center;
@@ -475,10 +751,7 @@ a {
 }
 
 .video-titulo {
-    color: #713d4d;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 3px 28px 10px 2px;
+    display: none;
 }
 
 .video-fechar {
@@ -769,6 +1042,21 @@ a {
 
     .event-details > div {
         padding: 15px;
+    }
+
+    .history-layout,
+    .feedback-grid,
+    .history-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-carousel,
+    .media-carousel {
+        padding: 12px;
     }
 
     .hero-actions {

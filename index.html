@@ -27,6 +27,7 @@
             <a href="#inicio">Início</a>
             <a href="#bolos">Nossos bolos</a>
             <a href="#festival">O festival</a>
+            <a href="#historico">Histórico</a>
             <a href="#contato">Contato</a>
         </nav>
 
@@ -103,7 +104,8 @@
             <div class="cakes-action">
                 <a 
                     href="https://wa.me/5516993641352?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20conhecer%20outros%20sabores%20de%20bolos." 
-                    class="btn" 
+                    class="btn whatsapp-link" 
+                    id="whatsapp-link"
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
@@ -171,6 +173,128 @@
             </div>
         </section>
 
+        <section class="history section" id="historico">
+            <div class="section-heading">
+                <span class="eyebrow">HISTÓRICO DOS FESTIVAIS</span>
+                <h2>Como foi o <span>1º festival</span></h2>
+                <p>Relembramos a primeira edição e os feedbacks que marcaram esse começo.</p>
+            </div>
+
+            <div class="festival-tabs" data-tabs>
+                <div class="festival-tabs-header" role="tablist" aria-label="Histórico dos festivais">
+                    <button class="tab-button is-active" type="button" role="tab" aria-selected="true" data-tab="festival-1">
+                        1º Festival
+                    </button>
+                    <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="festival-2">
+                        2º Festival
+                    </button>
+                    <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="festival-3">
+                        3º Festival
+                    </button>
+                </div>
+
+                <div class="tab-panel is-active" id="festival-1" role="tabpanel">
+                    <div class="history-layout">
+                        <div class="history-summary">
+                            <div class="summary-badge">Primeira edição • 2026</div>
+                            <h3>Um começo carregado de afeto e sabor.</h3>
+                            <p>
+                                Foi um momento especial para reunir pessoas, celebrar os bolos feitos com carinho
+                                e perceber o quanto a nossa comunidade ama essa festa doce.
+                            </p>
+
+                            <div class="history-stats">
+                                <div>
+                                    <strong>7+</strong>
+                                    <span>sabores</span>
+                                </div>
+                                <div>
+                                    <strong>95%</strong>
+                                    <span>avaliação positiva</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="history-carousel" aria-label="Carrossel de feedbacks do primeiro festival">
+                            <div class="history-carousel-title">Feedbacks</div>
+                            <div class="history-carousel-track">
+                                <img src="1-festival/feedback1.jpeg" alt="Foto do primeiro festival - momento de abertura" loading="lazy">
+                                <img src="1-festival/feedback2.jpeg" alt="Foto do primeiro festival - mesa de doces" loading="lazy">
+                                <img src="1-festival/feedback3.jpeg" alt="Foto do primeiro festival - clientes e bolos" loading="lazy">
+                                <img src="1-festival/feedback4.jpeg" alt="Foto do primeiro festival - público feliz" loading="lazy">
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+                                <div class="carousel-dots" aria-label="Indicadores do carrossel">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <button class="carousel-btn next" type="button" aria-label="Próximo">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-carousel" aria-label="Carrossel de vídeos do primeiro festival">
+                        <div class="media-carousel-track">
+                            <div class="media-card">
+                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 1">
+                                    <source src="1-festival/video1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="media-card">
+                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 2">
+                                    <source src="1-festival/video2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="media-card">
+                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 3">
+                                    <source src="1-festival/video3.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="media-card">
+                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 4">
+                                    <source src="1-festival/video4.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="media-carousel-btn prev" type="button" aria-label="Vídeos anteriores">‹</button>
+                            <div class="carousel-dots media-dots" aria-label="Indicadores de vídeos">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="media-carousel-btn next" type="button" aria-label="Próximos vídeos">›</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-panel" id="festival-2" role="tabpanel">
+                    <div class="future-festival">
+                        <div class="future-festival-icon">✨</div>
+                        <h3>2º Festival</h3>
+                        <p>
+                            Em breve uma nova edição do festival será realizada, trazendo ainda mais sabores, experiências e momentos doces para todos os participantes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="festival-3" role="tabpanel">
+                    <div class="future-festival">
+                        <div class="future-festival-icon">🎉</div>
+                        <h3>3º Festival</h3>
+                        <p>
+                            Em breve uma nova edição do festival será realizada, trazendo ainda mais sabores, experiências e momentos doces para todos os participantes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="contact section" id="contato">
             <span class="eyebrow">VAMOS CONVERSAR?</span>
 
@@ -184,7 +308,7 @@
             <div class="contact-actions">
                 <a
                     href="https://wa.me/5516993641352?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Vi%20o%20site%20do%20Festival%20de%20Bolos%20e%20gostaria%20de%20saber%20mais."
-                    class="btn"
+                    class="btn whatsapp-link"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -221,16 +345,13 @@
         <small>© 2026 Marília Bolos. Todos os direitos reservados.</small>
     </footer>
 
-    <div class="video-flutuante" id="videoFlutuante">
+    <div class="video-flutuante" id="videoFlutuante" hidden>
         <button
             class="video-fechar"
             id="fecharVideo"
             type="button"
             aria-label="Fechar vídeo"
         >×</button>
-
-        <div class="video-titulo">🎉 CHEGOU O GRANDE DIA! 🍰
-            Hoje é dia de adoçar a vida! ❤️</div>
 
         <video
             id="videoMarilia"
@@ -240,7 +361,7 @@
             loop
             preload="metadata"
         >
-            <source src="videos/video-flutuante.mp4" type="video/mp4">
+            <source src="1-festival/video1.mp4" type="video/mp4">
             Seu navegador não conseguiu carregar o vídeo.
         </video>
 
