@@ -17,24 +17,27 @@
 </head>
 <body>
 
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
     <header class="header">
-        <a href="#" class="logo" aria-label="Marília Bolos home">
+        <a href="index.html" class="logo" aria-label="Marília Bolos - Festival">
             <img src="imagens/bolo.png" alt="Logo" class="logo-imagem">
             <span class="logo-text">Marília <span>Bolos</span></span>
         </a>
 
-        <nav class="nav">
-            <a href="#inicio">Início</a>
-            <a href="#bolos">Nossos bolos</a>
-            <a href="#festival">O festival</a>
-            <a href="#historico">Histórico</a>
-            <a href="#contato">Contato</a>
+        <nav class="nav" aria-label="Navegação principal">
+            <a href="index.html" aria-current="page">Festival</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="equipe.html">Nossa Equipe</a>
         </nav>
 
-        <a href="#festival" class="btn btn-small">Conheça o festival</a>
+        <a href="#reserva" class="cart-link" aria-label="Reserva: 0 itens">
+            <span aria-hidden="true">♡</span>
+            Reserva
+            <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
     </header>
 
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <span class="eyebrow">FEITO COM AMOR, SERVIDO COM CARINHO</span>
@@ -48,8 +51,8 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#festival" class="btn">Quero conhecer o festival ↗</a>
-                    <a href="#bolos" class="text-link">Conhecer os bolos ↓</a>
+                    <a href="#cardapio" class="btn">Escolher minhas fatias ↗</a>
+                    <a href="#local" class="text-link">Ver endereço ↓</a>
                 </div>
             </div>
 
@@ -68,53 +71,38 @@
             </div>
         </section>
 
-        <section class="cakes section" id="bolos">
+        <section class="orders section" id="cardapio">
             <div class="section-heading">
-                <span class="eyebrow">NOSSAS DELÍCIAS</span>
-                <h2>Qual vai ser o seu <span>favorito?</span></h2>
-                <p>Descubra sabores preparados para adoçar o seu dia.</p>
+                <span class="eyebrow">CARDÁPIO DO FESTIVAL</span>
+                <h2>Reserve suas <span>fatias favoritas</span></h2>
+                <p>Escolha os sabores, ajuste as quantidades e envie sua reserva para retirar no festival.</p>
             </div>
 
-            <div class="cake-grid">
-                <article class="cake-card">
-                    <img src="imagens/Bolo_matilda.png" alt="Bolo Matilda" loading="lazy">
-                    <div class="cake-info">
-                        <h3>Bolo Matilda</h3>
-                        <p>Massa fofinha de chocolate intenso com recheio e cobertura ultra cremosos. O verdadeiro sonho de qualquer amante de chocolate!</p>
-                    </div>
-                </article>
+            <div class="order-catalog" id="order-catalog" aria-live="polite"></div>
 
-                <article class="cake-card">
-                    <img src="imagens/ninho_morango.png" alt="Bolo Ninho com Morango" loading="lazy">
-                    <div class="cake-info">
-                        <h3>Bolo Ninho c/ morango</h3>
-                        <p>Creme aveludado de Leite Ninho combinado com morangos frescos e selecionados. Uma opção leve, equilibrada e irresistível.</p>
+            <section class="cart-panel" id="reserva" aria-labelledby="cart-title">
+                <div class="cart-heading">
+                    <div>
+                        <span class="eyebrow">SUA ESCOLHA</span>
+                        <h3 id="cart-title">Sua reserva</h3>
                     </div>
-                </article>
-
-                <article class="cake-card">
-                    <img src="imagens/bolo_pudim.png" alt="Bolo Pudim" loading="lazy">
-                    <div class="cake-info">
-                        <h3>Bolo Pudim</h3>
-                        <p>A união perfeita entre a massa molhadinha de bolo e a doçura cremosa do pudim artesanal. O melhor de dois mundos numa só fatia!</p>
-                    </div>
-                </article>
-            </div>
-
-            <div class="cakes-action">
-                <a 
-                    href="https://wa.me/5516993641352?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20conhecer%20outros%20sabores%20de%20bolos." 
-                    class="btn whatsapp-link" 
-                    id="whatsapp-link"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    Conhecer outros sabores no WhatsApp ↗
-                </a>
-            </div>
+                    <button class="text-button" id="clear-cart" type="button">Limpar reserva</button>
+                </div>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Valor estimado</span>
+                    <strong id="cart-total">R$ 0,00</strong>
+                </div>
+                <p class="cart-note" id="cart-note"></p>
+                <div class="cart-actions">
+                    <a href="#cardapio" class="btn btn-outline">Continuar escolhendo</a>
+                    <button class="btn" id="finalize-reservation" type="button">Finalizar reserva</button>
+                </div>
+                <p class="cart-feedback" id="cart-feedback" role="status" aria-live="polite"></p>
+            </section>
         </section>
 
-        <section class="festival section" id="festival">
+        <section class="festival section" id="local">
             <div class="festival-content">
                 <span class="eyebrow">UM CONVITE ESPECIAL</span>
                 <h2>Vem aí o nosso<br><span>Festival de Bolos!</span></h2>
@@ -125,27 +113,15 @@
 
                 <div class="event-details">
                     <div>
-                        <span>📅</span>
+                        <span aria-hidden="true">📍</span>
                         <div>
-                            <strong>Data</strong>
-                            <p>10 de outubro de 2026</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <span>🕒</span>
-                        <div>
-                            <strong>Horário</strong>
-                            <p>A partir das 15h</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <span>📍</span>
-                        <div>
-                            <strong>Local</strong>
-                            <p>Avenida São Vicente, 3028</p>
-                            <p>Bairro Santa Rita — Franca/SP</p>
+                            <strong>Endereço</strong>
+                            <address>
+                                <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=-20.5487703,-47.3906858" target="_blank" rel="noopener noreferrer">
+                                Avenida São Vicente, 3028<br>
+                                Bairro Santa Rita — Franca/SP
+                                </a>
+                            </address>
                         </div>
                     </div>
                 </div>
@@ -173,204 +149,35 @@
             </div>
         </section>
 
-        <section class="history section" id="historico">
-            <div class="section-heading">
-                <span class="eyebrow">HISTÓRICO DOS FESTIVAIS</span>
-                <h2>Como foi o <span>1º festival</span></h2>
-                <p>Relembramos a primeira edição e os feedbacks que marcaram esse começo.</p>
-            </div>
-
-            <div class="festival-tabs" data-tabs>
-                <div class="festival-tabs-header" role="tablist" aria-label="Histórico dos festivais">
-                    <button class="tab-button is-active" type="button" role="tab" aria-selected="true" data-tab="festival-1">
-                        1º Festival
-                    </button>
-                    <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="festival-2">
-                        2º Festival
-                    </button>
-                    <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="festival-3">
-                        3º Festival
-                    </button>
-                </div>
-
-                <div class="tab-panel is-active" id="festival-1" role="tabpanel">
-                    <div class="history-layout">
-                        <div class="history-summary">
-                            <div class="summary-badge">Primeira edição • 2026</div>
-                            <h3>Um começo carregado de afeto e sabor.</h3>
-                            <p>
-                                Foi um momento especial para reunir pessoas, celebrar os bolos feitos com carinho
-                                e perceber o quanto a nossa comunidade ama essa festa doce.
-                            </p>
-
-                            <div class="history-stats">
-                                <div>
-                                    <strong>7+</strong>
-                                    <span>sabores</span>
-                                </div>
-                                <div>
-                                    <strong>95%</strong>
-                                    <span>avaliação positiva</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="history-carousel" aria-label="Carrossel de feedbacks do primeiro festival">
-                            <div class="history-carousel-title">Feedbacks</div>
-                            <div class="history-carousel-track">
-                                <img src="1-festival/feedback1.jpeg" alt="Foto do primeiro festival - momento de abertura" loading="lazy">
-                                <img src="1-festival/feedback2.jpeg" alt="Foto do primeiro festival - mesa de doces" loading="lazy">
-                                <img src="1-festival/feedback3.jpeg" alt="Foto do primeiro festival - clientes e bolos" loading="lazy">
-                                <img src="1-festival/feedback4.jpeg" alt="Foto do primeiro festival - público feliz" loading="lazy">
-                            </div>
-                            <div class="carousel-controls">
-                                <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
-                                <div class="carousel-dots" aria-label="Indicadores do carrossel">
-                                    <span class="dot active"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <button class="carousel-btn next" type="button" aria-label="Próximo">›</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="media-carousel" aria-label="Carrossel de vídeos do primeiro festival">
-                        <div class="media-carousel-track">
-                            <div class="media-card">
-                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 1">
-                                    <source src="1-festival/video1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="media-card">
-                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 2">
-                                    <source src="1-festival/video2.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="media-card">
-                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 3">
-                                    <source src="1-festival/video3.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="media-card">
-                                <video controls muted playsinline preload="metadata" aria-label="Vídeo do primeiro festival 4">
-                                    <source src="1-festival/video4.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="media-carousel-btn prev" type="button" aria-label="Vídeos anteriores">‹</button>
-                            <div class="carousel-dots media-dots" aria-label="Indicadores de vídeos">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                            <button class="media-carousel-btn next" type="button" aria-label="Próximos vídeos">›</button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="tab-panel" id="festival-2" role="tabpanel">
-                    <div class="future-festival">
-                        <div class="future-festival-icon">✨</div>
-                        <h3>2º Festival</h3>
-                        <p>
-                            Em breve uma nova edição do festival será realizada, trazendo ainda mais sabores, experiências e momentos doces para todos os participantes.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="tab-panel" id="festival-3" role="tabpanel">
-                    <div class="future-festival">
-                        <div class="future-festival-icon">🎉</div>
-                        <h3>3º Festival</h3>
-                        <p>
-                            Em breve uma nova edição do festival será realizada, trazendo ainda mais sabores, experiências e momentos doces para todos os participantes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact section" id="contato">
-            <span class="eyebrow">VAMOS CONVERSAR?</span>
-
-            <h2>Um festival cheio de sabor!</h2>
-
-            <p>
-                Venha conhecer os bolos da Marília e compartilhar
-                esse momento especial com a gente.
-            </p>
-
-            <div class="contact-actions">
-                <a
-                    href="https://wa.me/5516993641352?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Vi%20o%20site%20do%20Festival%20de%20Bolos%20e%20gostaria%20de%20saber%20mais."
-                    class="btn whatsapp-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Falar pelo WhatsApp ↗
-                </a>
-
-                <a
-                    href="https://www.instagram.com/mariliamartins7884/"
-                    class="btn btn-outline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Conhecer o Instagram ↗
-                </a>
-            </div>
-        </section>
     </main>
 
+    <dialog class="confirmation-dialog" id="reservation-confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-description">
+        <div class="confirmation-content">
+            <button class="dialog-close" type="button" aria-label="Fechar confirmação" data-close-confirmation>×</button>
+            <span class="eyebrow">QUASE LÁ</span>
+            <h2 id="confirmation-title">Confirme sua reserva</h2>
+            <p id="confirmation-description">Revise os sabores e as quantidades antes de continuar para o WhatsApp.</p>
+            <ul class="confirmation-items" id="confirmation-items"></ul>
+            <div class="confirmation-total">
+                <span>Valor estimado</span>
+                <strong id="confirmation-total">R$ 0,00</strong>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn btn-outline" type="button" data-close-confirmation>Voltar e editar</button>
+                <button class="btn" type="button" id="confirm-whatsapp">Continuar para o WhatsApp</button>
+            </div>
+        </div>
+    </dialog>
+
     <footer class="footer">
-        <a href="#inicio" class="logo">
+        <a href="index.html" class="logo">
             Marília <span>Bolos.</span>
         </a>
 
         <p>Feito com carinho para adoçar momentos especiais.</p>
 
-        <a
-            href="https://www.instagram.com/mariliamartins7884/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Instagram da Marília Bolos ↗
-        </a>
-
         <small>© 2026 Marília Bolos. Todos os direitos reservados.</small>
     </footer>
-
-    <div class="video-flutuante" id="videoFlutuante" hidden>
-        <button
-            class="video-fechar"
-            id="fecharVideo"
-            type="button"
-            aria-label="Fechar vídeo"
-        >×</button>
-
-        <video
-            id="videoMarilia"
-            autoplay
-            muted
-            playsinline
-            loop
-            preload="metadata"
-        >
-            <source src="1-festival/video1.mp4" type="video/mp4">
-            Seu navegador não conseguiu carregar o vídeo.
-        </video>
-
-        <button class="video-som" id="alternarSom" type="button" aria-pressed="false">
-            🔇 Ativar som
-        </button>
-
-        <div class="chuva-coracoes" id="chuvaCoracoes" aria-hidden="true"></div>
-    </div>
 
 </body>
 </html>
