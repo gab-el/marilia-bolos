@@ -730,13 +730,64 @@ a {
 
 /* ===== RODAPÉ ===== */
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 35px 7%;
+    padding: 48px 7% 18px;
     background: var(--brown);
     color: white;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.3fr repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand .logo {
+    width: fit-content;
+    padding: 0;
+}
+
+.footer-brand p {
+    max-width: 250px;
+    margin-top: 12px;
+    color: #e7d6cd;
+    font-size: 13px;
+}
+
+.footer-links,
+.footer-contact,
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.footer-main h2 {
+    margin-bottom: 5px;
+    color: #edb3b6;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer-main a,
+.footer-address address {
+    color: #e7d6cd;
+    font-size: 12px;
+    font-style: normal;
+    transition: color 0.2s ease;
+}
+
+.footer-main a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
     text-align: center;
 }
 
@@ -744,14 +795,33 @@ a {
     color: #edb3b6;
 }
 
-.footer p {
-    color: #e7d6cd;
-    font-size: 12px;
-}
-
 .footer small {
     color: #c9b4aa;
     font-size: 10px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: var(--brown);
+    color: white;
+    box-shadow: 0 6px 18px rgba(67, 41, 31, 0.25);
+    font-size: 24px;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    background: var(--pink);
 }
 
 /* ===== IDENTIDADE MARÍLIA BOLOS ===== */
@@ -828,6 +898,11 @@ a {
 }
 
 @media (max-width: 1000px) {
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+
     .header {
         padding: 18px 5%;
         gap: 15px;
@@ -857,6 +932,22 @@ a {
 }
 
 @media (max-width: 700px) {
+    .footer {
+        padding: 38px 7% 16px;
+    }
+
+    .footer-main {
+        gap: 28px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        margin-top: 28px;
+    }
+
     .header {
         position: relative;
         flex-wrap: wrap;
@@ -962,6 +1053,19 @@ a {
 }
 
 @media (max-width: 480px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+    }
+
     .gallery-grid,
     .team-grid {
         grid-template-columns: 1fr;
